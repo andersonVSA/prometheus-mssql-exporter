@@ -17,7 +17,7 @@
   "readmeFilename": "README.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rongfengliang/prometheus-mssql-exporter.git"
+    "url": "https://github.com/andersonVSA/prometheus-mssql-exporter"
   },
   "bugs": {
     "url": "https://github.com/rongfengliang/prometheus-mssql-exporter/issues"

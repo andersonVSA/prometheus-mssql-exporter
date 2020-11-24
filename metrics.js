@@ -199,7 +199,7 @@ from sys.dm_os_sys_memory`,
 
 const mssql_host_conenct = {
     metrics: {
-        mssql_host_conenct_count: new client.Gauge({ name: 'mssql_host_conenct_count', help: 'mssql host conenct count', labelNames: ['hostname'] }),
+        mssql_host_connect_count: new client.Gauge({ name: 'mssql_host_connect_count', help: 'mssql host conenct count', labelNames: ['hostname'] }),
     },
     query: `select host_name,count(*) from sys.dm_exec_sessions where is_user_process=1 group by host_name`,
     collect: function (rows, metrics) {
@@ -207,7 +207,7 @@ const mssql_host_conenct = {
             const row = rows[i];
             const mssql_host_connect_count = Number.parseFloat(row[1].value);
             const mssql_host_hostname = row[0].value;
-            metrics.mssql_host_conenct_count.set({ hostname: mssql_host_hostname }, mssql_host_connect_count);
+            metrics.mssql_host_connect_count.set({ hostname: mssql_host_hostname }, mssql_host_connect_count);
         }
     }
 };
