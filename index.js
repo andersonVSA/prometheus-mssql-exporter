@@ -11,6 +11,7 @@ let config = {
     connect: {
         server: process.env["SERVER"],
         options :{
+            database: process.env["DATABASE"],
             port: parseInt(process.env["PORT"]) || 1433,
             encrypt:process.env["ENCRYPT"]=="false" ? false: true,
             rowCollectionOnRequestCompletion: true
