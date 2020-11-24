@@ -9,9 +9,10 @@ WORKDIR /usr/src/app
 
 # Copy dependency definitions
 COPY package.json *.js /usr/src/app/
-
 # Install dependecies
 RUN yarn  --production
+
+COPY metrics.js /usr/src/app/
 
 # Expose the port the app runs in
 EXPOSE 4000
